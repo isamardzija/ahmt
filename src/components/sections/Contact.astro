@@ -1,0 +1,43 @@
+---
+import data from "../../lib/data.ts";
+import shared from "../../lib/shared";
+import { Image } from "astro:assets";
+import H2 from "../typography/H2.astro";
+import Paragraph from "../typography/Paragraph.astro";
+import BackgroundPattern from "../../assets/chakras.png";
+import ContactCard from "../ContactCard.astro";
+import EmailIcon from "../../assets/mail.svg?raw";
+import PhoneIcon from "../../assets/phone.svg?raw";
+import LocationIcon from "../../assets/location.svg?raw";
+import MapArea from "../../assets/map-area.png";
+---
+
+<section class="px-body flex flex-col gap-[50px] py-[250px]">
+    <div id="contact" class="flex flex-col gap-5">
+        <H2>{data.contact.heading}</H2>
+        <Paragraph
+            >If you have any questions or doubts, feel free to send me an <a
+                class="text-primary"
+                href={`mailto:${shared.email}`}>email</a
+            > or text message on <a class="text-primary" href={`tel:${shared.phone}`}>WhatsApp</a></Paragraph
+        >
+    </div>
+    <div class="lg:flex lg:flex-row-reverse justify-center">
+        <div
+            class="md:px-[54px] flex flex-col gap-[15px] bg-[#d5e2e3] py-[100px] rounded-t-[20px] items-center lg:rounded-tl-none lg:rounded-br-[20px]">
+            <ContactCard heading={data.contact.list.email} text={shared.email} icon={EmailIcon} />
+            <ContactCard heading={data.contact.list.phone} text={shared.phone} icon={PhoneIcon} />
+            <ContactCard heading={data.contact.list.location} text={shared.location} icon={LocationIcon} />
+            <p class="max-w-[372px] pt-[15px] leading-[20px] w-[90%]">{shared.notice}</p>
+        </div>
+        <div class="basis-1/2 flex">
+            <Image class="rounded-b-[20px] lg:rounded-br-none lg:rounded-l-[20px] w-full" src={MapArea} alt="" />
+        </div>
+    </div>
+</section>
+
+<style define:vars={{ backgroundPattern: `url("${BackgroundPattern.src}")` }}>
+    section {
+        background-image: var(--backgroundPattern);
+    }
+</style>

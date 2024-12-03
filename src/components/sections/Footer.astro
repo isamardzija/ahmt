@@ -1,0 +1,35 @@
+---
+import shared from "../../lib/shared";
+import data from "../../lib/data";
+import { Image } from "astro:assets";
+import LogoSmall from "../../assets/small-logo-footer.svg";
+import EmailIcon from "../../assets/mail-footer.svg?raw";
+import PhoneIcon from "../../assets/phone-footer.svg?raw";
+import LocationIcon from "../../assets/location-footer.svg?raw";
+---
+
+<footer class="bg-primary text-white py-[70px] px-[15px] flex flex-col gap-[60px] items-center">
+    <div class="flex items-center gap-3 max-w-[211px]">
+        <Image src={LogoSmall} alt="" width={61} height={68} />
+        <p class="uppercase text-14 leading-[17.5px]">{shared.name}</p>
+    </div>
+    <div class="flex flex-col gap-[15px] items-center text-14">
+        <a href=`mailto:${shared.email}` class="flex gap-[10px] items-center">
+            <div set:html={EmailIcon} />
+            <p>{shared.email}</p>
+        </a>
+        <a href=`tel:${shared.phone}` class="flex gap-[10px] items-center">
+            <div set:html={PhoneIcon} />
+            <p>{shared.phone}</p>
+        </a>
+        <div class="flex gap-[10px] items-center">
+            <div set:html={LocationIcon} />
+            <p>{shared.location}</p>
+        </div>
+
+        <p class="text-center">{shared.notice}</p>
+    </div>
+    <p class="uppercase text-14 leading-[17.5px] text-center whitespace-pre-line lg:whitespace-normal">
+        {data.footer.copyright}
+    </p>
+</footer>

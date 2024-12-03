@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Hero, Benefits, Divider, FAQ, Order, Contact, Info, Footer } from "../components/sections/Sections.astro";
+import data from "../lib/data";
+import "../styles/utilities.css";
+---
+
+<Layout>
+    <main class="text-dark relative max-w-[1920px] mx-auto">
+        <Hero />
+        <Benefits data={data.benefits.first} id="services" />
+        <Divider />
+        <Benefits data={data.benefits.second} />
+        <FAQ />
+        <Order />
+        <Contact />
+        <Info />
+        <Footer />
+    </main>
+</Layout>

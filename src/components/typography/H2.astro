@@ -1,0 +1,12 @@
+---
+const { alignment = "text-center", id } = Astro.props;
+
+interface Props {
+    alignment?: string;
+    id?: string;
+}
+---
+
+<h2 {...id && { id }} class=`text-32 lg:text-56 lg:leading-[70px] leading-10 uppercase ${alignment}`>
+    <slot />
+</h2>

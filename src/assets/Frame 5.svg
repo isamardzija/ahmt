@@ -1,0 +1,7 @@
+<svg width="294" height="54" viewBox="0 0 294 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="15" y1="1.5" y2="1.5" stroke="#D3A3C9" stroke-width="3"/>
+<mask id="path-2-inside-1_169_745" fill="white">
+<path d="M15 0H294V24C294 40.5685 280.569 54 264 54H15V0Z"/>
+</mask>
+<path d="M15 -3H297L291 3H15V-3ZM297 24C297 42.2254 282.225 57 264 57H15V51H264C278.912 51 291 38.9117 291 24H297ZM15 54V0V54ZM297 -3V24C297 42.2254 282.225 57 264 57V51C278.912 51 291 38.9117 291 24V3L297 -3Z" fill="#D3A3C9" mask="url(#path-2-inside-1_169_745)"/>
+</svg>

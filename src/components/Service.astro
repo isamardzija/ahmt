@@ -1,0 +1,25 @@
+---
+const { color = "#000", text } = Astro.props;
+---
+
+<li class="flex relative">
+    <svg width="54" height="54" viewBox="0 0 75 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M60.0281 32.5405L37.2497 0L14.4713 32.5405C9.90046 39.0704 8.5397 47.2132 10.7376 54.8813C12.908 62.4533 20.4992 74 37.2497 74C54.0001 74 61.5912 62.4533 63.7618 54.8813C65.9598 47.2132 64.5989 39.0704 60.0281 32.5405ZM57.8529 53.1876C56.1957 58.969 49.7998 67.8531 37.2498 67.8531C24.6999 67.8531 18.3041 58.9689 16.6467 53.1876C14.9619 47.31 16.0046 41.0693 19.5072 36.0656L37.2498 10.7189L54.9925 36.0656C58.495 41.0691 59.5375 47.3098 57.8529 53.1876Z"
+            fill={color}></path>
+    </svg>
+    <span
+        class="absolute h-full w-full pl-[66px] flex items-center text-16 lg:text-18 font-medium leading-5 lg:leading-[22.5px]"
+        >{text}</span
+    >
+    <svg class="-ml-4" width="294" height="54" viewBox="0 0 294 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="15" y1="1.5" y2="1.5" stroke={color} stroke-width="3"></line>
+        <mask id="path-2-inside-1_169_745" fill="white">
+            <path d="M15 0H294V24C294 40.5685 280.569 54 264 54H15V0Z"></path>
+        </mask>
+        <path
+            d="M15 -3H297L291 3H15V-3ZM297 24C297 42.2254 282.225 57 264 57H15V51H264C278.912 51 291 38.9117 291 24H297ZM15 54V0V54ZM297 -3V24C297 42.2254 282.225 57 264 57V51C278.912 51 291 38.9117 291 24V3L297 -3Z"
+            fill={color}
+            mask="url(#path-2-inside-1_169_745)"></path>
+    </svg>
+</li>

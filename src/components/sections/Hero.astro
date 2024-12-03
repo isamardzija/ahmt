@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import data from "../../lib/data.ts";
+import H1 from "../typography/H1.astro";
+import Paragraph from "../typography/Paragraph.astro";
+import BackgroundPattern from "../../assets/chakras.png";
+import LogoSmall from "../../assets/small-logo-nav.svg";
+import LogoBig from "../../assets/big-logo-hero.svg";
+import CTAButton from "../CTAButton.astro";
+import { Nav } from "./Nav.jsx";
+---
+
+<section class="flex flex-col items-center gap-[62px] min-h-[699px] lg:min-h-[940px] lg:px-[30px] pt-body">
+    <Nav client:load />
+    <div class="flex flex-col items-center gap-5">
+        <Image class="lg:hidden" src={LogoSmall} alt={data.altTags.logo} width={207} height={230} />
+        <Image class="hidden lg:block pb-[60px]" src={LogoBig} alt={data.altTags.logo} width={338.9} height={377.78} />
+        <div class="px-body flex flex-col gap-standard items-center">
+            <H1>{data.hero.heading}</H1>
+            <Paragraph>{data.hero.subheading}</Paragraph>
+            <CTAButton />
+        </div>
+    </div>
+</section>
+
+<style define:vars={{ backgroundPattern: `url("${BackgroundPattern.src}")` }}>
+    section {
+        background-image: var(--backgroundPattern);
+    }
+</style>

@@ -1,0 +1,31 @@
+---
+import data from "../../lib/data.ts";
+import H2 from "../typography/H2.astro";
+import HeartPulseIcon from "../../assets/heart-pulse.svg?raw";
+import BalanceIcon from "../../assets/balance.svg?raw";
+import CertificateIcon from "../../assets/certificate.svg?raw";
+import { Image } from "astro:assets";
+import AnaImage from "../../assets/ana.jpg";
+const icons = [CertificateIcon, BalanceIcon, HeartPulseIcon];
+---
+
+<section class="grid gap-[50px] pt-[250px] place-items-center pb-[200px] px-body lg:grid-cols-2 mx-auto lg:gap-[79px]">
+    <div class="flex flex-col justify-center gap-[50px] max-w-[605px] mx-auto">
+        <H2 alignment="text-left">{data.info.heading}</H2>
+        <div class="flex flex-col gap-[30px]">
+            {
+                data.info.list.map((info, i) => (
+                    <div class="flex gap-[15px]">
+                        <div set:html={icons[i]} />
+                        <p class="text-16 leading-[20px]">{info}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <Image
+        src={AnaImage}
+        alt={data.altTags.portrait}
+        class="max-w-[330px] max-h-[440px] lg:max-w-[541px] lg:max-h-[721px]"
+    />
+</section>

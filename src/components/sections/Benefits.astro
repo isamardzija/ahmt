@@ -1,0 +1,16 @@
+---
+const { data, id = "" } = Astro.props;
+import H2 from "../typography/H2.astro";
+import Paragraph from "../typography/Paragraph.astro";
+import Service from "../Service.astro";
+---
+
+<section class="px-body flex flex-col gap-[50px] py-[250px] mx-auto">
+    <div id={id} class="flex flex-col gap-5">
+        <H2>{data.heading}</H2>
+        <Paragraph>{data.subheading}</Paragraph>
+    </div>
+    <ul class="mx-auto flex flex-col gap-6 lg:flex-wrap lg:flex-row items-center justify-center max-w-[866px]">
+        {data.list.map((benefit: string, index: number) => <Service text={benefit} color={data.colors[index]} />)}
+    </ul>
+</section>
